@@ -66,6 +66,30 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>com.google.code.maven-replacer-plugin</groupId>
+        <artifactId>maven-replacer-plugin</artifactId>
+        <version>1.3.5</version>
+        <executions>
+          <execution>
+            <id>replace_version</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>replace</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <filesToInclude>target/classes/resource/*.js</filesToInclude>
+          <replacements>
+            <replacement>
+              <token>@@METATRON_APP_VERSION@@</token>
+              <value>${metatron.app.version}</value>
+            </replacement>
+          </replacements>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 

@@ -90,6 +90,9 @@
         <!-- used in dataprep -->
         <hadoop.version>2.7.2</hadoop.version>
 
+        <!-- set application version info (LNB) -->
+        <metatron.app.version>Undefined</metatron.app.version>
+
     </properties>
     <build>
         <plugins>
